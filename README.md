@@ -35,21 +35,10 @@ Lastly, a table was created to determine the employees who are eligible to parti
 
 Summary:
 
-* Currently, 90398 roles will need to be filled as the "silver tsunami" begins to make an impact.
+* Currently, 90398 roles will need to be filled as the "silver tsunami" begins to make an impact. Query: `SELECT count(DISTINCT (emp_no)) FROM retirement_titles`
 
-Query: '<SELECT count(DISTINCT (emp_no)) FROM retirement_titles>'
+* There are 1940 enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees. Query: `SELECT COUNT(emp_no) FROM mentorship_eligibility`
 
-* There are 1940 enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees.
+* From the 90398 employees that will retire, 21209 were born in 1952, which will the the first batch of employees to retire. Query: `SELECT COUNT(emp_no) FROM employees WHERE birth_date BETWEEN '1952-01-01' AND '1952-12-31'>`
 
-Query: '<SELECT COUNT(emp_no) FROM mentorship_eligibility>'
-
-* From the 90398 employees that will retire, 21209 were born in 1952, which will the the first batch of employees to retire.
-
-Query: '<SELECT COUNT(emp_no) FROM employees
-WHERE birth_date BETWEEN '1952-01-01' AND '1952-12-31'>'
-
-* From the 1940 employees eligible for mentorship, 633 are entitled as 'Senior Staff', 610 as 'Senior Engineer' and 99 as 'Technique Leader'. There is a need to ensure there are mentorship content available for these more senior titles.
-
-Query: '<SELECT COUNT(*) AS count,title FROM mentorship_eligibility
-GROUP BY title
-ORDER BY count DESC>'
+* From the 1940 employees eligible for mentorship, 633 are entitled as 'Senior Staff', 610 as 'Senior Engineer' and 99 as 'Technique Leader'. There is a need to ensure there are mentorship content available for these more senior titles. Query: `'SELECT COUNT(*) AS count,title FROM mentorship_eligibility GROUP BY title ORDER BY count DESC`
